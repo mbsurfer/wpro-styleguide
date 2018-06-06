@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>{{ .Title }}</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="{{ .Description }}">
+
+    <link rel="stylesheet" href="https://use.typekit.net/erw8wrh.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "bootstrap.css" }}" />
+    <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
+
+</head>
+<body>
+
+    {{ partial "header/site-nav.html" . }}
+
+    <main role="main">
+        {{ block "main" . }}
+
+        {{ end }}
+    </main>
+
+{{ partial "footer/scripts.html" . }}
+
+</body>
+<html>

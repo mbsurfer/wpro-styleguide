@@ -1,0 +1,15 @@
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1000px
+);
+
+$container-max-widths: (
+    xl: 1000px
+);
+
+$blue: #4c7bbe;
+
+$font-family-sans-serif:  "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;

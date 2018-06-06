@@ -1,0 +1,33 @@
+<!-- sidebar start -->
+<nav class="col-12 col-md-4 col-xl-3 sidebar h-100">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column list-unstyled">
+            {{ $currentPage := . }}
+            {{ range .Site.Menus.main }}
+
+                {{ if .HasChildren }}
+                    <li class="mb-3 outer-nav-item nav-item{{ if $currentPage.HasMenuCurrent "main" . }} active{{ end }}">
+                        <a href="{{ (index .Children 0).URL }}">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </a>
+                    </li>
+                    <ul class="sub-menu list-unstyled mb-3">
+                        {{ range .Children }}
+                            <li class="mb-1 nav-item{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+                                <a href="{{ .URL }}">{{ .Name }}</a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ else }}
+                    <li class="mb-3 nav-item outer-nav-item">
+                        <a href="{{ .URL }}">
+                            {{ .Pre }}
+                            <span>{{ .Name }}</span>
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+        </ul>
+    </div>
+</nav>
